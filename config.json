@@ -10,16 +10,16 @@
       "completeTask": "/task/complete-task",
       "inviteList": "/user/invite_list",
       "evmConnect": "/user_public/evm_connect",
-      "joinWaitlist": "/waitlist/join"
+      "joinWaitlist": "/user_public/join_waitlist"
     }
   },
   "referral": {
     "enabled": true,
     "accessCode": "lmir452w",
-    "maxReferrals": 5,
+    "maxReferrals": 3,
     "delayBetweenReferralsMs": {
-      "min": 3000,
-      "max": 5000
+      "min": 4000,
+      "max": 7000
     }
   },
   "scheduler": {
