@@ -1,0 +1,30 @@
+# Wallet & Keys (KRITIS!)
+wallets/
+*.key
+*.pkey
+private-keys.json
+accounts.json
+tokens.json
+device_fingerprints.json
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Logs
+logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Termux specific
+.termux/
