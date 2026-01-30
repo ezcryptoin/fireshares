@@ -1,23 +1,54 @@
-
 {
-  "name": "fairshares-referral-bot",
-  "version": "1.0.0",
-  "description": "Secure auto-referral bot for FairShares (private keys never persisted)",
-  "main": "referral-bot.js",
-  "scripts": {
-    "start": "node referral-bot.js",
-    "test": "echo \"No tests - security first!\""
+  "api": {
+    "baseUrl": "https://api.fairshares.io",
+    "appUrl": "https://app.fairshares.io",
+    "endpoints": {
+      "userInfo": "/user/user_info",
+      "taskList": "/task/task-list",
+      "taskProgress": "/task/task-progress",
+      "taskInfo": "/task/task-info",
+      "completeTask": "/task/complete-task",
+      "inviteList": "/user/invite_list",
+      "evmConnect": "/user_public/evm_connect",
+      "joinWaitlist": "/waitlist/join"
+    }
   },
-  "dependencies": {
-    "axios": "^1.6.0",
-    "chalk": "^4.1.2",
-    "dotenv": "^16.3.1",
-    "ethers": "^6.7.0"
+  "referral": {
+    "enabled": true,
+    "accessCode": "lmir452w",
+    "maxReferrals": 5,
+    "delayBetweenReferralsMs": {
+      "min": 3000,
+      "max": 5000
+    }
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/your-username/fairshares-referral-bot.git"
+  "scheduler": {
+    "checkIntervalMinutes": 60,
+    "dailyResetHourUTC": 0,
+    "maxActionsPerSession": 15,
+    "sessionCooldownMinutes": 30
   },
-  "license": "MIT",
-  "private": true
+  "delays": {
+    "betweenAccountsMs": 5000,
+    "betweenTasksMs": 3000,
+    "humanThinkingMinMs": 500,
+    "humanThinkingMaxMs": 2000,
+    "pageWarmupMs": 2000,
+    "variationPercent": 30
+  },
+  "retry": {
+    "maxRetries": 3,
+    "baseDelayMs": 1000,
+    "maxDelayMs": 30000
+  },
+  "dummyPages": [
+    "/dashboard",
+    "/leaderboard",
+    "/profile"
+  ],
+  "security": {
+    "neverSavePrivateKey": true,
+    "saveOnlyPublicAddress": true,
+    "useDeterministicFingerprint": true
+  }
 }
